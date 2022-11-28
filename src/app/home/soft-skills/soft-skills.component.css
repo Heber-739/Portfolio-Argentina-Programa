@@ -1,0 +1,27 @@
+.cont{
+    position: relative;
+    margin: 50px auto 0;
+}
+
+
+@media screen and (min-width: 768px) {
+    .border{
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 10vw;
+        height: 50%;
+        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+        background-color: white;
+    }
+    h2.title{
+        margin: 20px auto 30px 0;
+      }
+    .description{
+        max-width: 500px;
+        margin: auto;
+    }
+  }
+@media screen and (min-width: 1024px) {
+    
+  }

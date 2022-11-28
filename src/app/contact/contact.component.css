@@ -1,0 +1,57 @@
+.div_text {
+  width: 90%;
+  margin: 0 auto 10px;
+}
+.div_text p{
+  margin-top: 10px;
+}
+.title {
+  margin: 20px auto 30px;
+}
+
+.contact_content {
+  width: 100%;
+  height: fit-content;
+}
+
+.form {
+  margin: 25% auto 0;
+  width: 100%;
+}
+.input_container {
+  width: 100%;
+  margin: 25px 0 15px;
+}
+
+.mensaje {
+  padding: 5px 10px;
+  height: 80px;
+}
+
+.btn {
+  margin: 20px 0 40px;
+}
+@media screen and (min-width: 768px) {
+  .div_text {
+    height: 100%;
+    width: 58%;
+    margin: 0 auto 10px;
+  }
+  .illustration{
+    margin: 80px auto 0;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .contact_content{
+    width: 35%;
+    margin: 0 auto;
+  }
+  
+}

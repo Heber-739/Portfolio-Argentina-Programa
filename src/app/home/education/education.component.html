@@ -1,0 +1,139 @@
+<section>
+  <div class="ill_container">
+    <h2 class="title">Experiencias educativas</h2>
+  <img class="illustration" src="assets/img/illustrations/ill-12.png">
+</div>
+  <ng-container *ngIf="edithMode">
+    <div class="btn add_btn" (click)="addEducation()">
+      {{ toEdith ? "Cancelar" : "Agregar Educación" }}
+    </div> 
+  </ng-container> 
+
+  <ng-container *ngIf="this.toEdith">
+    <app-form-education
+      [edithEd]="edithEd"
+      (finish)="finish($event)"
+    ></app-form-education>
+  </ng-container>
+
+  <div class="education_container">
+    <div class="cards_container" *ngFor="let i of eds">
+      <div class="card box">
+<div class="card_img_container">
+  <img src="{{ i.img }}" alt="{{ i.name }}" class="card_img" />
+
+</div>
+        <a class="card_title link" target="_blank" href="{{ i.link }}">{{
+          i.name 
+        }}</a>
+        <ul class="list">
+          <ng-container *ngFor="let t of i.tags">
+            <li>{{ movil? t.abbreviation : t.name }}</li></ng-container
+          >
+        </ul>
+        <p class="status">{{ i.finish ? "Finalizado" : "En progreso" }}</p>
+      </div>
+      <div *ngIf="edithMode" class="cont_edith_btn">
+        <button class="edith_btn" (click)="delete(i)">Eliminar</button>
+        <button class="edith_btn" (click)="edith(i)">Editar</button>
+      </div>
+    </div>
+  </div>
+ 
+</section>
+<!-- 
+<div class="cards_container">
+  <div class="card box">
+    <img src="assets/img/oracle.webp" alt="ONE logo" class="card_img" />
+    <a
+      class="card_title link"
+      target="_blank"
+      href="https://www.oracle.com/ar/education/oracle-next-education/"
+      >Oracle Next-Education</a
+    >
+    <ul class="list">
+      <li>Introd. a la Programación</li>
+      <li>Programación front-end</li>
+      <li>Java</li>
+      <li>Soft skills</li>
+    </ul>
+  </div>
+  <div class="card box">
+    <img src="assets/img/argpro.webp" alt="ONE logo" class="card_img" />
+    <a
+      class="card_title link"
+      target="_blank"
+      href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
+      >Argentina Programa
+    </a>
+    <ul class="list">
+      <li>Introd. Desarrollo Web</li>
+      <li>Programación front-end</li>
+      <li>Angular</li>
+      <li>Bases de datos</li>
+      <li>POO: Buenas prácticas</li>
+      <li>Java</li>
+      <li>Spring Boot</li>
+      <li>Dev Ops</li>
+    </ul>
+  </div>
+</div>
+<div class="cards_container">
+  <div class="card box">
+    <img src="assets/img/oracle.webp" alt="ONE logo" class="card_img" />
+    <a
+      class="card_title link"
+      target="_blank"
+      href="https://www.oracle.com/ar/education/oracle-next-education/"
+      >ONE - Alumni Latam</a
+    >
+    <ul class="list">
+      <li>Data Science</li>
+      <li>Python</li>
+      <li>OCI y Oracle Analytics</li>
+      <li>MySQL Server de Oracle</li>
+      <li>Oracle Cloud Overview</li>
+      <li>CyberSecurity & Oracle Cloud</li>
+    </ul>
+  </div>
+  <div class="card box">
+    <img src="assets/img/openBootcamp.webp" alt="ONE logo" class="card_img" />
+    <a class="card_title link" target="_blank" href="https://open-bootcamp.com/"
+      >Open Bootcamp
+    </a>
+    <ul class="list">
+      <li>Introd. Programación</li>
+      <li>Programación front-end</li>
+      <li>Ptthon</li>
+      <li>Git</li>
+      <li>Java Avanzado</li>
+      <li>Spring</li>
+      <li>Testing con JUnit</li>
+      <li>ReactJs Avanzado</li>
+    </ul>
+  </div>
+  <div class="card box">
+    <img src="assets/img/google.svg" alt="Google" class="card_img" />
+    <a
+      class="card_title link"
+      target="_blank"
+      href="https://grow.google/intl/es-419_us/certificates/project-management/#?modal_active=none"
+      >Gestión de proyectos
+    </a>
+    <ul class="list">
+      <li>Gest. de proyectos</li>
+      <li>Cult. organización</li>
+      <li>Pensamiento estratégico</li>
+      <li>Desarr. Profesional</li>
+      <li>Gest. Cambios</li>
+      <li>Estatuto del proyecto</li>
+      <li>Redacc. de negocios</li>
+      <li>Gest. de los interesados</li>
+      <li>Gest. de riesgos</li>
+      <li>Adquisiciones</li>
+      <li>Planif. de Proyectos</li>
+      <li>Estimación de tareas</li>
+    </ul>
+  </div>
+</div>
+ -->

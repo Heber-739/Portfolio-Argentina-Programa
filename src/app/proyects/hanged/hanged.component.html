@@ -1,0 +1,63 @@
+<main class="body">
+  <header>
+    <h2 class="title">Ahorcado</h2>
+    <p class="text">No se admiten números ni caracteres especiales</p>
+    <p class="moreInfo" (click)="moreInfo()">i</p>
+  </header>
+
+  <form class="form" *ngIf="visibility">
+    <div class="input_container">
+      <input
+        (focus)="LabelwordHanged.classList.add('active')"
+        id="wordHanged"
+        [formControl]="inputControl"
+        type="text"
+        placeholder="Escriba una nueva palabra"
+        class="input_text"
+        autocomplete="off"
+      />
+      <label #LabelwordHanged for="wordHanged" class="label" #LabelName
+        >Nueva palabra</label
+      >
+      <small *ngIf="inputControl.invalid && inputControl.dirty">
+        Texto invalido</small
+      >
+    </div>
+
+    <button
+      class="btn"
+      type="button"
+      [disabled]="inputControl.invalid || inputControl.pristine"
+      (click)="addWord()"
+    >
+      AGREGAR
+    </button>
+    <button type="button" class="btn" (click)="start()">INICIAR</button>
+  </form>
+  <section
+    class="section2"
+    [ngStyle]="{ display: visibility === false ? 'flex' : 'none' }"
+  >
+    <div>
+      <canvas class="hanged" width="300" height="400" #canvasRef></canvas>
+    </div>
+    <div class="box input_box">
+      <input
+        type="text"
+        class="input input_text"
+        placeholder="Letras"
+        [formControl]="inputTwoControl"
+      />
+      <button
+        type="button"
+        class="btn"
+        (click)="try()"
+        [disabled]="inputTwoControl.invalid"
+      >
+        Probar
+      </button>
+      <button type="button" class="btn" (click)="reload()">Reset</button>
+    </div>
+  </section>
+  <button class="btn button" routerLink="/proyectos">Volver</button>
+</main>

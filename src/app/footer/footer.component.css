@@ -1,0 +1,43 @@
+.footer {
+  padding: 30px 0;
+  background-color: var(--color1);
+}
+.logos {
+  width: clamp(320px,100%,600px);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+.logo_container {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: block;
+  width: 60px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: white;
+  margin-bottom: 10px;
+  align-self: center;
+}
+.logo:nth-child(2) {
+  background-color: var(--color4);
+  width: 100px;
+  padding: 7px;
+}
+.link {
+  font-size: 12px;
+  text-align: center;
+}
+.credits{
+  justify-content: space-evenly;
+  height: fit-content;
+}
+.credits p{
+  text-align: center;
+  margin: 40px auto 0;
+font-size: 14px;
+}
+

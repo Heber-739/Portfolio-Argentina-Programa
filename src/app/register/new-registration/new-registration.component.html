@@ -1,0 +1,192 @@
+<main class="body">
+  <form class="form" novalidate [formGroup]="logup">
+    <div class="ill_container">
+      <img class="illustration" src="assets/img/illustrations/ill-03.png" />
+      <h2 class="title">Registrarse</h2>
+    </div>
+
+    
+    <div class="input_container">
+      <input
+        (focus)="Name.classList.add('active')"
+        id="name"
+        class="input_text input"
+        type="text"
+        placeholder="Ingrese su nombre"
+        autocomplete="off"
+        formControlName="name"
+      />
+      <label for="name" class="label" #Name> Nombre: </label>
+    </div>
+    <small
+      *ngIf="
+        logup.get('name')?.hasError('required') && logup.get('name')?.dirty
+      "
+    >
+      Campo obligatorio</small
+    >
+    <div class="input_container">
+      <input
+        (focus)="Username.classList.add('active')"
+        id="username"
+        class="input_text input"
+        type="text"
+        placeholder="Nombre de usuario"
+        autocomplete="off"
+        formControlName="username"
+      />
+      <label for="username" class="label" #Username> Nombre de usuario: </label>
+    </div>
+    <small
+      *ngIf="
+        logup.get('username')?.hasError('required') &&
+        logup.get('username')?.dirty
+      "
+    >
+      Campo obligatorio</small
+    >
+    <div class="input_container">
+      <input
+        (focus)="Email.classList.add('active')"
+        id="email"
+        class="input_text input"
+        type="email"
+        placeholder="Correo electrónico"
+        autocomplete="off"
+        formControlName="email"
+      />
+      <label for="email" class="label" #Email>Correo electrónico: </label>
+    </div>
+    <small
+      *ngIf="
+        logup.get('email')?.hasError('required') && logup.get('email')?.dirty
+      "
+    >
+      Campo obligatorio</small
+    >
+    <small
+      *ngIf="logup.get('email')?.hasError('email') && logup.get('email')?.dirty"
+    >
+      Email no valido</small
+    >
+    <div class="input_container">
+      <input
+        (focus)="Password.classList.add('active')"
+        id="password"
+        class="input_text input"
+        type="password"
+        placeholder="Contraseña"
+        autocomplete="off"
+        formControlName="password"
+      />
+      <label for="password" class="label" #Password> Contrasena: </label>
+    </div>
+    <small *ngIf="logup.get('password')?.hasError('maxlength')">
+      Hasta 16 caracteres
+    </small>
+    <small
+      *ngIf="
+        logup.get('password')?.hasError('haveSpace') &&
+        !logup.get('password')?.hasError('required')
+      "
+    >
+      Sin espacios
+    </small>
+    <small
+      *ngIf="
+        logup.get('password')?.hasError('required') &&
+        logup.get('password')?.dirty
+      "
+    >
+      Campo obligatorio
+    </small>
+    <div class="input_container">
+      <input
+        (focus)="PasswordConfirm.classList.add('active')"
+        id="passwordConfirm"
+        class="input_text input"
+        type="password"
+        placeholder="Confirmar contraseña"
+        autocomplete="off"
+        formControlName="passwordConfirm"
+      />
+      <label for="passwordConfirm" class="label" #PasswordConfirm>
+        Repetir Contrasena:
+      </label>
+    </div>
+    <small
+      *ngIf="
+        logup.get('passwordConfirm')?.hasError('required') &&
+        logup.get('passwordConfirm')?.dirty
+      "
+    >
+      Campo obligatorio
+    </small>
+    <small
+      *ngIf="logup.hasError('confirm') && logup.get('passwordConfirm')?.dirty"
+      >Las contraseñas no coinciden</small
+    >
+
+    <p
+      *ngIf="
+        logup.get('password')?.hasError('haveSpace') &&
+        !logup.get('password')?.hasError('required')
+      "
+    >
+      Sin espacios
+    </p>
+
+    <div class="details">
+      <p
+        [ngStyle]="{
+          background:
+            logup.get('password')?.hasError('minlength') ||
+            logup.get('password')?.pristine ||
+            logup.get('password')?.hasError('required')
+              ? 'red'
+              : 'green'
+        }"
+      >
+        Mínimo 8 caracteres
+      </p>
+      <p
+        [style.background]="
+          logup.get('password')?.hasError('haveStringMin') ? 'red' : 'green'
+        "
+      >
+        Una minuscula
+      </p>
+      <p
+        [style.background]="
+          logup.get('password')?.hasError('haveNumber') ? 'red' : 'green'
+        "
+      >
+        Un número
+      </p>
+      <p
+        [style.background]="
+          logup.get('password')?.hasError('haveCharacter') ? 'red' : 'green'
+        "
+      >
+        Un caracter especial
+      </p>
+
+      <p
+        [style.background]="
+          logup.get('password')?.hasError('haveStringMay') ? 'red' : 'green'
+        "
+      >
+        Una mayuscula
+      </p>
+    </div>
+    <button
+      class="btn"
+      type="button"
+      (click)="checkIn()"
+      [disabled]="logup.invalid"
+    >
+      Registrarse
+    </button>
+    <a class="btn button" routerLink="/login">Volver al Login</a>
+  </form>
+</main>

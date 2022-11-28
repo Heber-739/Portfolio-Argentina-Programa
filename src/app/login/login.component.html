@@ -1,0 +1,73 @@
+<section class="body" *ngIf="!isLogged">
+  <form class="form" novalidate [formGroup]="login">
+    <h2 class="title">Iniciar Sesión</h2>
+    <div class="input_container">
+      <input
+        (focus)="Username.classList.add('active')"
+        id="username"
+        class="input_text input"
+        type="text"
+        placeholder="Nombre de usuario"
+        autocomplete="off"
+        formControlName="username"
+      />
+      <label for="username" class="label" #Username>Nombre de usuario: </label>
+    </div>
+
+    <small
+      *ngIf="
+        login.get('username')?.hasError('required') &&
+        login.get('username')?.dirty
+      "
+    >
+      Campo obligatorio</small
+    >
+    <div class="input_container">
+      <input
+        (focus)="Password.classList.add('active')"
+        id="password"
+        class="input_text input"
+        type="password"
+        placeholder="Contraseña"
+        autocomplete="off"
+        formControlName="password"
+      />
+      <label for="password" class="label" #Password> Contraseña: </label>
+    </div>
+    <small
+      *ngIf="
+        login.get('password')?.hasError('required') &&
+        login.get('password')?.dirty
+      "
+    >
+      Campo obligatorio</small
+    >
+
+    <button
+      class="btn"
+      type="button"
+      (click)="enter()"
+      [disabled]="login.invalid"
+    >
+      Entrar
+    </button>
+  </form>
+  
+  <div class="ill_container">
+  <img class="illustration" src="assets/img/illustrations/ill-10.png" />
+  <div class="logup">
+    <p class="text">¿Aún no tienes una cuenta?</p>
+    <button class="btn" routerLink="/newRegistration">Registrarse</button>
+  </div></div>
+
+  <!------------------- Registrarse-------------------------- -->
+</section>
+<section class="body" *ngIf="isLogged">
+  <div class="login">
+    <h2 class="title">Ya inició sesión</h2>
+    <p>Redirigiendo...</p>
+    <a class="btn" routerLink="">Regresar</a>
+  </div>
+</section>
+<!-- <a class="btn back" *ngIf="logger" (click)="logUp()">Volver al Login</a>
+ -->

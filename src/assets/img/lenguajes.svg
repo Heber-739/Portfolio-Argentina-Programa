@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
+	.st1{fill:#232020;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st3{fill:#FFFFFF;}
+	.st4{stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st5{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+	.st6{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st7{fill:none;stroke:#FFFFFF;stroke-width:0.15;stroke-miterlimit:10;}
+	.st8{fill:#232020;stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;}
+	.st9{fill:none;stroke:#FFFFFF;stroke-width:5.000000e-02;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-width:0.3;stroke-miterlimit:10;}
+	.st11{font-family:'LucidaConsole';}
+	.st12{font-size:2px;}
+	.st13{fill:none;stroke:#FFFFFF;stroke-width:0.25;stroke-miterlimit:10;}
+	.st14{fill:#FFFFFF;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st15{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+	.st16{enable-background:new    ;}
+	.st17{clip-path:url(#SVGID_1_);}
+	.st18{fill:#003567;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+	.st19{fill:#356600;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+	.st20{fill:#708090;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+	.st21{fill:#761622;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st5" d="M23.6,33c-0.1,0-0.1,0.2-0.1,0.3L14.3,41c-0.2,0.1-0.4,0.1-0.6-0.1c-0.1-0.2-0.1-0.4,0.1-0.6l7-5.9
+		c1-0.8,1-2.3,0-3.1l-7-5.9c-0.2-0.1-0.2-0.4-0.1-0.6c0.1-0.2,0.4-0.2,0.6-0.1l9.2,7.7C23.5,32.8,24.5,32.9,23.6,33z"/>
+	<path class="st6" d="M54.9,16.6H9.1c-0.3,0-0.6,0.3-0.6,0.6v29.5c0,0.3,0.3,0.6,0.6,0.6h45.7c0.3,0,0.6-0.3,0.6-0.6V17.2
+		C55.5,16.9,55.2,16.6,54.9,16.6z"/>
+	<path class="st6" d="M11.5,20.7h41c0.6,0,1,0.4,1,1v22.6c0,0.6-0.4,1-1,1h-41c-0.6,0-1-0.4-1-1V21.7C10.5,21.2,11,20.7,11.5,20.7z"
+		/>
+	<path class="st3" d="M53.9,17.9l-0.7,0.7l-0.7-0.7h-0.1V18l0.7,0.7l-0.6,0.6v0.1l0,0l0,0l0.6-0.6l0.7,0.7l0,0l0,0v-0.1l-0.7-0.7
+		L53.9,17.9C54,17.9,54,17.9,53.9,17.9C53.9,17.8,53.9,17.8,53.9,17.9z"/>
+	<rect x="52.1" y="17.5" class="st7" width="2.2" height="2.2"/>
+	<path class="st8" d="M48,19.4h-1.1l0,0l0,0H48C48,19.4,48.1,19.4,48,19.4C48.1,19.4,48,19.4,48,19.4z"/>
+	<rect x="46.4" y="17.5" class="st7" width="2.2" height="2.2"/>
+	<rect x="49.2" y="17.5" class="st7" width="2.2" height="2.2"/>
+	<rect x="49.5" y="17.8" class="st9" width="1.7" height="1.7"/>
+	<line class="st10" x1="49.5" y1="17.9" x2="51.2" y2="17.9"/>
+	<circle class="st2" cx="32" cy="32" r="30"/>
+	<line class="st2" x1="27.2" y1="39.7" x2="48.2" y2="39.7"/>
+	<text transform="matrix(1 0 0 1 9.7618 19.375)" class="st3 st11 st12">C:/_</text>
+	<text transform="matrix(1 0 0 1 9.7618 19.375)" class="st13 st11 st12">C:/_</text>
+</g>
+</svg>

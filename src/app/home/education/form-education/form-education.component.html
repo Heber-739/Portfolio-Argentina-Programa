@@ -1,0 +1,63 @@
+<form class="form" [formGroup]="formEd" *ngIf="!edSent">
+  <div class="input_container">
+    <input
+      class="input_text"
+      type="text"
+      (focus)="name.classList.add('active')"
+      id="name"
+      formControlName="name"
+      autocomplete="off"
+      placeholder="Nombre de la educación"
+    />
+    <label
+      for="money"
+      [ngClass]="edithEd.id == 0 ? '' : 'active'"
+      class="label"
+      #name
+      >Nombre</label
+    >
+  </div>
+
+  <div class="input_container">
+    <input
+      class="input_text"
+      type="text"
+      (focus)="link.classList.add('active')"
+      id="link"
+      formControlName="link"
+      autocomplete="off"
+      placeholder="Link a la descripción o homepage"
+    />
+    <label
+      for="link"
+      class="label"
+      [ngClass]="edithEd.id == 0 ? '' : 'active'"
+      #link
+      >Link</label
+    >
+  </div>
+    <button class="btn status" (click)="this.edFinish = !this.edFinish">
+      {{ this.edFinish ? "Finalizado" : "En Progreso" }}
+    </button>
+  <div class="img_container">
+    <small>Tamaño máximo de imagen 1MB</small>
+
+      <label for="file" class="btn"
+        >Logo o foto ilustrativa<input
+          id="file"
+          type="file"
+          accept="image/*"
+          (change)="onchange($event)"
+      /></label>
+
+        <img *ngIf="myimage" class="outputImg" [src]="myimage"/>
+  </div>
+  <button class="btn" (click)="saveEducation()">Guardar</button>
+  <button class="btn" (click)="toTags()">Agregar sus contenidos</button>
+</form>
+<ng-container *ngIf="edSent">
+  <app-tags (end)="finished($event)"></app-tags>
+</ng-container>
+
+
+<!-- HAY QUE  JUNTAR EL FORM TAGS CON EL FORM EDUCATION -->

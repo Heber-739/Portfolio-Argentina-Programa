@@ -1,0 +1,56 @@
+.text {
+  width: 60vw;
+  margin: 0 auto 40px;
+}
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: clamp(250px, 75vw, 500px);
+  margin: 30px auto 0;
+}
+.input_container {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100px;
+  text-align: center;
+}
+.input::placeholder {
+  opacity: 1;
+}
+.input_box {
+  flex-direction: row;
+  margin: 10px auto;
+  width: fit-content;
+  padding: 10px 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin: 5px 10px 0 5px;
+}
+.button {
+  margin-top: 30px;
+}
+
+/* ---------Canvas------- */
+.section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 0px;
+  width: 98vw;
+}
+.hanged {
+  border: 5px solid var(--color5);
+  padding: 0;
+  border-radius: 20px;
+  background: linear-gradient(-45deg, #dbfaf1, #b1f7e2);
+}
+@media screen and (orientation: landscape) {
+}
+@media screen and (min-width: 1024px) {
+}

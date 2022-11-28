@@ -1,0 +1,88 @@
+<main class="body">
+  <header class="header">
+    <h2 class="title">Encriptador</h2>
+    <p class="text">No se admiten acentos</p>
+    <p class="moreInfo" (click)="moreInfo()">i</p>
+  </header>
+  <section>
+    <form class="headerForm">
+      <div class="input_container">
+        <input
+          (focus)="LabelKey.classList.add('active')"
+          type="text"
+          class="input_text"
+          id="key"
+          [formControl]="keyControl"
+          autocomplete="off"
+        />
+        <label class="label" #LabelKey for="key">Clave de encriptado</label>
+        <small *ngIf="keyControl.hasError('required') && keyControl.dirty">
+          Campo obligatorio
+        </small>
+        <small *ngIf="keyControl.hasError('maxlength')"
+          >Ingrese 4 números</small
+        >
+        <small *ngIf="keyControl.hasError('pattern')"
+          >Solo números permitidos</small
+        >
+      </div>
+      <button type="button" class="btn" (click)="toggleEncrypt()">
+        {{ toggle ? "Encriptar" : "Desencriptar" }}
+      </button>
+    </form>
+    <form class="form">
+      <small
+        *ngIf="
+          encryptTextControl.hasError('required') && encryptTextControl.dirty
+        "
+        >Campo obligatorio</small
+      >
+      <small *ngIf="encryptTextControl.hasError('asciiCharRange')"
+        >Caracter no soportado</small
+      >
+      <textarea
+        class="input_text input"
+        [formControl]="toggle ? encryptTextControl : decriptTextControl"
+        placeholder="Ingrese el texto a encriptar aquí."
+      ></textarea>
+
+      <ng-container [ngSwitch]="toggle">
+        <button
+          *ngSwitchCase="true"
+          type="button"
+          class="btn"
+          [disabled]="encryptTextControl.invalid || keyControl.invalid"
+          (click)="encrypt()"
+        >
+          Encriptar
+        </button>
+        <button
+          *ngSwitchCase="false"
+          class="btn"
+          type="button"
+          [disabled]="decriptTextControl.invalid && keyControl.invalid"
+          (click)="decrypt()"
+        >
+          Desencriptar
+        </button>
+      </ng-container>
+    </form>
+    <form class="form" appPreventDefault>
+      <textarea
+        class="input_text input"
+        [formControl]="textControlTwo"
+        placeholder="Recibirá el texto encriptado o desencriptado aquí."
+        #copiarTexto
+      ></textarea>
+      <button
+        class="btn"
+        type="button"
+        [disabled]="textControlTwo.invalid"
+        (click)="copy()"
+      >
+        Copiar al portapapeles
+      </button>
+    </form>
+  </section>
+  <button class="btn button" routerLink="/proyectos">Volver</button>
+</main>

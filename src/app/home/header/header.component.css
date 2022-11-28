@@ -1,0 +1,189 @@
+.header {
+  position: relative;
+  height: 250px;
+  background-color: var(--color4);
+  animation: backgr 2s ease-in-out forwards;
+}
+@keyframes backgr {
+  0% {
+    clip-path: ellipse(49% 0% at 50% -2%);
+  }
+  100% {
+    clip-path: ellipse(90% 91% at 50% 0%);
+  }
+}
+.container {
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  height: 100%;
+}
+.argpro {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  z-index: 99;
+  height: 50px;
+  width: auto;
+  opacity: 0.8;
+  animation: start 3s forwards;
+}
+.picture,
+.icon_curtain {
+  position: absolute;
+  left: calc(50% - 60px);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  animation: toDown 2s ease-in-out forwards;
+}
+.picture {
+  border: 2px solid white;
+  filter: drop-shadow(0 0 5px black);
+  z-index: 3;
+}
+.icon_curtain {
+  background-color: var(--color4);
+  z-index: 2;
+}
+.header_git,
+.header_in {
+  z-index: 1;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  animation: toDown 2s ease-in-out forwards;
+}
+.header_git {
+  animation: moveRight 4s ease-in-out forwards;
+}
+.header_in {
+  animation: moveLeft 4s ease-in-out forwards;
+}
+
+@keyframes moveRight {
+  0% {
+    top: 10%;
+    right: 45%;
+  }
+  45% {
+    top: 45%;
+    right: 45%;
+  }
+  100% {
+    top: 45%;
+    right: 10%;
+  }
+}
+@keyframes moveLeft {
+  0% {
+    top: 10%;
+    left: 45%;
+  }
+  45% {
+    top: 45%;
+    left: 45%;
+  }
+  100% {
+    top: 45%;
+    left: 10%;
+  }
+}
+@keyframes toDown {
+  0%,
+  20% {
+    top: 10%;
+  }
+  100% {
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header {
+    height: 180px;
+  }
+  .picture,
+  .icon_curtain {
+    left: calc(50% - 45px);
+    width: 90px;
+    height: 90px;
+  }
+  .argpro {
+    height: 40px;
+  }
+  .header_git,
+  .header_in {
+    width: 45px;
+    height: 45px;
+  }
+  .container {
+    width: 85vw;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    height: 300px;
+  }
+  .argpro {
+    height: 80px;
+  }
+  .picture,
+  .icon_curtain {
+    position: absolute;
+    left: calc(50% - 70px);
+    width: 140px;
+    height: 140px;
+  }
+
+  .header_git,
+  .header_in {
+    width: 70px;
+    height: 70px;
+  }
+  .container {
+    width: 450px;
+  }
+}
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .header {
+    height: 180px;
+  }
+  .picture,
+  .icon_curtain {
+    left: calc(50% - 50px);
+    width: 100px;
+    height: 100px;
+  }
+  .argpro {
+    height: 60px;
+  }
+  .header_git,
+  .header_in {
+    width: 50px;
+    height: 50px;
+  }
+
+  .container {
+    width: 350px;
+  }
+}
+@media screen and (min-width: 901px) {
+  .header {
+    height: 270px;
+  }
+  .picture,
+  .icon_curtain {
+    left: calc(50% - 75px);
+    width: 150px;
+    height: 150px;
+  }
+  .header_git,
+  .header_in {
+    width: 70px;
+  }
+}

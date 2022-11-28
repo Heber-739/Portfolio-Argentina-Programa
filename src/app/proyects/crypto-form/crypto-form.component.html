@@ -1,0 +1,89 @@
+<div class="deposit_container">
+  <h2 class="sub_title title">Comencemos a Jugar!</h2>
+  <div class="ill_container">
+    <p>
+      Seleccione la criptomoneda y realice un deposito mínimo de $1000 para poder acceder al encriptador y los juegos de esta sección.
+    </p>
+    <img class="illustration" src="assets/img/illustrations/ill-02.png">
+  </div>
+ 
+
+  <form class="form" *ngIf="!alreadyDeposit" [formGroup]="depositForm">
+    <div class="input_container">
+      <input 
+        (focus)="LabelCurrency.classList.add('active')"
+        id="currency"
+        class="input_text"
+        type="text"
+        formControlName="currency"
+        autocomplete="off"
+        placeholder="Buscar crypto"
+      /><label for="currency" class="label" #LabelCurrency>Crypto</label>
+      <div
+        id="cryptoSelect"
+        class="crypto_container"
+        *ngIf="this.showCryptoList.length > 0"
+      >
+        <div
+          *ngFor="let i of showCryptoList | slice: 0:7"
+          class="crypto"
+          (click)="select(i)"
+        >
+          <img src="{{ i.image }}" alt="{{ i.name }}" class="imageCrypto" />
+          <p>
+            {{ i.name }} <small>({{ i.symbol }})</small>
+          </p>
+          <p class="crypto_price">
+            {{ i.current_price | currency: "USD":"symbol":"0.0-8" }}
+          </p>
+        </div>
+      </div>
+      <small
+        class="small"
+        *ngIf="
+          depositForm.get('currency')?.hasError('required') &&
+          depositForm.get('currency')?.dirty
+        "
+        >Seleccione una Cryptomoneda</small
+      >
+    </div>
+    <div *ngIf="cryptoSelected.name.length > 1" class="cryptoSelected">
+      <img
+        src="{{ cryptoSelected.image }}"
+        alt="{{ cryptoSelected.name }}"
+        class="imageCrypto"
+      />
+      <p>
+        {{ cryptoSelected.name }} <small>({{ cryptoSelected.symbol }})</small>
+      </p>
+      <button class="btn btni" (click)="resetForm()">Eliminar</button>
+    </div>
+    <div class="input_container">
+      <input
+        (focus)="LabelMoney.classList.add('active')"
+        id="money"
+        class="input_text"
+        type="number"
+        formControlName="money"
+        placeholder="Ingrese el depósito"
+        autocomplete="off"
+      />
+      <label for="money" class="label" #LabelMoney>Valor</label>
+      <p
+        class="small"
+        #MinDeposit
+        > </p
+      >
+    </div>
+    <button type="button" class="btn" [disabled]="!depositForm.get('money')?.dirty" (click)="deposit()">Depositar</button>
+  </form>
+  <section *ngIf="alreadyDeposit">
+    <div class="cryptoSelected">
+      <img src="{{ wallet.img }}" alt="{{ wallet.name }}" class="imageCrypto" />
+      <p>{{ wallet.name }}</p>
+      <p>
+        {{ wallet.balance | currency: " ":"symbol":"0.0-8" }}
+      </p>
+    </div>
+  </section>
+</div>

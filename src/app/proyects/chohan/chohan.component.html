@@ -1,0 +1,147 @@
+<main class="body">
+  <header class="header">
+    <h2 class="title">Chohan</h2>
+    <p class="text">Ingrese su nombre y que rueden!</p>
+  </header>
+  <div class="data box container">
+    <p class="wallet">
+      <img class="icon" src="{{ wallet.img }}" /> {{ wallet.name }}:
+      {{ wallet.balance | currency: " ":"symbol":"0.0-8" }}
+    </p>
+    <p>Apuesta: {{ bet }}</p>
+    <p>Resultado: {{ result }}</p>
+    <p>Paridad: {{ parity }}</p>
+  </div>
+  <section class="section1">
+    <div class="presentation box container">
+      <form class="form form_name" *ngIf="visibility">
+        <input
+          type="text"
+          placeholder="¿Cuál es tu nombre?"
+          class="input_text"
+          autocomplete="off"
+          [formControl]="nameInput"
+        />
+        <button
+          type="button"
+          class="btn"
+          (click)="start()"
+          [disabled]="nameInput.invalid || betInput.invalid"
+        >
+          Start!
+        </button>
+      </form>
+      <div *ngIf="!visibility">
+        <div [ngSwitch]="switchMenssage">
+          <p class="message_text" *ngSwitchCase="'bienvenida'">
+            Bienvenido {{ name }},<br />Apuesta y Gana!
+          </p>
+          <p class="message_text win" *ngSwitchCase="'gano'">
+            Felicidades Ganó!!
+          </p>
+          <p class="message_text losed" *ngSwitchCase="'perdio'">
+            Usted Perdió!
+          </p>
+          <p class="message_text" *ngSwitchCase="'despedida'">
+            Muchas Gracias {{ name }} por jugar, hasta la próxima!
+          </p>
+        </div>
+        <ng-container [ngSwitch]="haveBalance">
+          <p class="text" *ngSwitchCase="true">
+            Saldo disponible: &cent;{{ wallet.balance }}
+          </p>
+          <p class="text" *ngSwitchCase="false">
+            Saldo insuficiente para seguir jugando
+          </p>
+        </ng-container>
+      </div>
+      <div class="continue" *ngIf="question">
+        <p class="text">¿Desea continuar?</p>
+        <button class="btn" (click)="continuePlaying(true)">Si</button>
+        <button class="btn" (click)="continuePlaying(false)">No</button>
+      </div>
+    </div>
+    <div class="bets box container">
+      <div class="form_bets">
+        <p *ngIf="betInput.invalid && betInput.dirty">Apuesta inválida</p>
+        <input
+          type="number"
+          placeholder="¿Cuánto apostará?"
+          class="input_text bet"
+          autocomplete="off"
+          [max]="wallet.balance"
+          [formControl]="betInput"
+        />
+        <button
+          type="button"
+          class="btn"
+          [disabled]="betInput.invalid || betInput.disabled"
+          (click)="play(true)"
+        >
+          Par
+        </button>
+        <button
+          type="button"
+          class="btn"
+          [disabled]="
+            betInput.invalid || betInput.value == '' || betInput.disabled
+          "
+          (click)="play(false)"
+        >
+          Impar
+        </button>
+      </div>
+    </div>
+
+    <div class="container_dices container box">
+      <div class="container_dice box">
+        <!-- -------------Dado1--------------- -->
+        <div class="dice_one face_one">
+          <div id="value1_1" class="c_one circle1"></div>
+          <div id="value2_1" class="c_one circle2"></div>
+          <div id="value3_1" class="c_one circle3"></div>
+          <div id="value4_1" class="c_one circle4"></div>
+          <div id="value5_1" class="c_one circle5"></div>
+          <div id="value6_1" class="c_one circle6"></div>
+          <div id="value7_1" class="c_one circle7"></div>
+        </div>
+
+        <!-- -------------Dado2--------------- -->
+      </div>
+      <div class="container_dice box">
+        <div class="dice_two face_two">
+          <div id="value1_2" class="c_two circle1"></div>
+          <div id="value2_2" class="c_two circle2"></div>
+          <div id="value3_2" class="c_two circle3"></div>
+          <div id="value4_2" class="c_two circle4"></div>
+          <div id="value5_2" class="c_two circle5"></div>
+          <div id="value6_2" class="c_two circle6"></div>
+          <div id="value7_2" class="c_two circle7"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="registers box container">
+    <table class="table">
+      <thead class="table_title">
+        <tr>
+          <th class="table_column_title">N°</th>
+          <th class="table_column_title">Apuesta</th>
+          <th class="table_column_title">Resultado</th>
+          <th class="table_column_title">Billetera</th>
+        </tr>
+      </thead>
+      <tbody class="table_body">
+        <tr *ngFor="let object of registers; let i = index" class="rows">
+          <td>{{ i + 1 }}</td>
+          <td>{{ object.bet }}</td>
+          <td [ngClass]="object.result == 'gano' ? 'win' : 'losed'">
+            {{ object.result }}
+          </td>
+          <td>{{ object.balance }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn button" routerLink="/proyectos">Volver</button>
+</main>

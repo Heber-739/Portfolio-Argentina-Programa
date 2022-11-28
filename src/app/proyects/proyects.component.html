@@ -1,0 +1,67 @@
+<section class="body">
+  <h2 class="title">Proyectos</h2>
+  <div class="ill_container">
+    <img class="illustration" src="assets/img/illustrations/ill-11.png" />
+      <p>
+        Aquí hay tres de los proyectos que desarrollé hasta el momento. 
+      </p>
+    </div>
+    <div class="text_container">
+      <p>
+        En primer lugar, un encriptador de texto. Encripta y desencripta
+        mensajes de texto ingresado. Utiliza regEx para aceptar unicamente
+        letras sin acento, ni caracteres muy especiales ASCII.
+      </p>
+      <p>
+        En segundo lugar, el clásico juego del ahorcado. Posee una lista
+        predeterminada de palabras, pero puede ingresar nuevas palabras. La
+        gráfica esta hecha en canvas de manera responsiva.
+      </p>
+      <p>
+        El tercero, Cho-Han es un juego de apuestas. Originalmente lo desarrollé
+        en python y lo reescribí en typescript para agregarlo a mi portfolio.
+      </p>
+    </div>
+  
+
+    <app-crypto-form></app-crypto-form>
+    <div class="cards_conteiner">
+      <div class="card box" (click)="redirigir('encriptador')">
+        <figure class="card_container_img">
+          <img
+            class="card_img"
+            src="assets/img/encriptador.svg"
+            alt="Encriptador"
+          />
+        </figure>
+        <div class="card_div_text">
+          <h4 class="card_title">Encriptador de texto</h4>
+          <p class="clickMe">Click me</p>
+        </div>
+      </div>
+
+      <div class="card box" (click)="redirigir('ahorcado')">
+        <figure class="card_container_img">
+          <img
+            class="card_img"
+            src="assets/img/ahorcado.svg"
+            alt="Encriptador"
+          />
+        </figure>
+
+        <div class="card_div_text">
+          <h4 class="card_title">Juego del Ahorcado</h4>
+          <p class="clickMe">Click me</p>
+        </div>
+      </div>
+      <div class="card box" (click)="redirigir('chohan')">
+        <figure class="card_container_img">
+          <img class="card_img" src="assets/img/dado.svg" alt="Encriptador" />
+        </figure>
+        <div class="card_div_text">
+          <h4 class="card_title">Cho - Han</h4>
+          <p class="clickMe">Click me</p>
+        </div>
+      </div>
+    </div>
+</section>

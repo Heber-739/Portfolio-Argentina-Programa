@@ -1,0 +1,24 @@
+<section class="section">
+  <div class="ill_container">
+    <h2 class="title">Experiencia laboral</h2>
+    <img class="illustration" src="assets/img/illustrations/ill-06.png">
+</div>
+  <ng-container *ngIf="edithMode">
+    <div class="btn add_btn" (click)="addWorkExp()">
+      {{ this.toEdith ? "Cancelar" : "Agregar Experiencia Laboral" }}
+    </div>
+  </ng-container>
+  <ng-container *ngIf="toEdith">
+    <app-form-user-exp (finish)="finish($event)" [edithWorks]="edithWorks"></app-form-user-exp>
+  </ng-container>
+
+  <div class="cont" *ngFor="let i of works">
+    <div class="border"></div>
+    <h2 class="sub_title">{{ i.name }}</h2>
+    <p class="text">{{ i.description }}</p>
+    <div class="cont_edith_btn" *ngIf="edithMode">
+      <button class="edith_btn" (click)="delete(i)">Eliminar</button>
+      <button class="edith_btn" (click)="edith(i)">Editar</button>
+    </div>
+  </div>
+</section>

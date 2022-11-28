@@ -1,0 +1,135 @@
+<section class="body">
+  <form class="form" appPreventDefault novalidate [formGroup]="userForm">
+    <h2 class="sub_title">Cargar datos de usuario</h2>
+    <div class="input_container">
+      <input
+        (focus)="Name.classList.add('active')"
+        id="name"
+        class="input_text input"
+        type="text"
+        placeholder="Ingrese su nombre"
+        autocomplete="off"
+        formControlName="name"
+      /><label
+        for="name"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Name
+        >Nombre</label
+      >
+    </div>
+    <div class="input_container">
+      <input
+        (focus)="Username.classList.add('active')"
+        id="username"
+        class="input_text input"
+        type="text"
+        placeholder="Ingrese su apellido"
+        autocomplete="off"
+        formControlName="surname"
+      /><label
+        for="username"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Username
+        >Apellido</label
+      >
+    </div>
+    <div class="input_container">
+      <input
+        id="uniqueUsername"
+        class="input_text input"
+        type="text"
+        placeholder="Nombre de usuario único"
+        autocomplete="off"
+        formControlName="username"
+      /><label for="uniqueUsername" class="label active"
+        >Nombre de usuario único</label
+      >
+    </div>
+    <div class="input_container">
+      <input
+        (focus)="Age.classList.add('active')"
+        id="age"
+        class="input_text input"
+        type="number"
+        placeholder="Ingrese su edad"
+        autocomplete="off"
+        formControlName="age"
+      /><label
+        for="age"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Age
+        >Edad</label
+      >
+    </div>
+    <div class="input_container">
+      <input
+        (focus)="Github.classList.add('active')"
+        id="github"
+        class="input_text input"
+        type="text"
+        placeholder="Link github"
+        autocomplete="off"
+        formControlName="github"
+      /><label
+        for="github"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Github
+        >Github</label
+      >
+    </div>
+    <div class="input_container">
+      <input
+        (focus)="Linkedin.classList.add('active')"
+        id="linkedin"
+        class="input_text input"
+        type="text"
+        placeholder="Link Linkedin"
+        autocomplete="off"
+        formControlName="linkedin"
+      /><label
+        for="linkedin"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Linkedin
+        >Linkedin</label
+      >
+    </div>
+    <div class="input_container textarea_container">
+      <textarea
+        id="description"
+        cols="30"
+        rows="15"
+        (focus)="Description.classList.add('active')"
+        class="input_text input"
+        type="text"
+        placeholder="Ingrese una descripción"
+        autocomplete="off"
+        formControlName="description"
+      ></textarea>
+      <label
+        for="description"
+        class="label"
+        [ngClass]="edithMode ? 'active' : ''"
+        #Description
+        >Descripción</label
+      >
+    </div>
+    <div class="img_container">
+    <small>Tamañoo máximo de imagen 1MB</small>
+      <img *ngIf="myimage" class="outputImg" [src]="myimage"/>
+
+      <label for="file" class="btn"
+        >Cargar foto de pérfil<input
+          id="file"
+          type="file"
+          accept="image/*"
+          (change)="onchange($event)"
+      /></label>
+    </div>
+    <button class="btn" (click)="sendUser()">Guardar</button>
+  </form>
+</section>

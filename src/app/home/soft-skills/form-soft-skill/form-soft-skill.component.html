@@ -1,0 +1,43 @@
+<form class="form" [formGroup]="formSS">
+  <div class="input_container">
+    <input
+      class="input_text"
+      type="text"
+      (focus)="name.classList.add('active')"
+      id="name"
+      formControlName="name"
+      autocomplete="off"
+      placeholder="Nombre de la educación"
+    />
+    <label
+      for="name"
+      [ngClass]="edithSS.id == 0 ? '' : 'active'"
+      class="label"
+      #name
+      >Nombre</label
+    >
+  </div>
+  <div class="input_container textarea_container">
+    <textarea
+      id="description"
+      cols="30"
+      rows="15"
+      (focus)="Description.classList.add('active')"
+      class="input_text input"
+      type="text"
+      placeholder="Ingrese una descripción"
+      autocomplete="off"
+      formControlName="description"
+    ></textarea>
+    <label
+      for="description"
+      [ngClass]="edithSS.id == 0 ? '' : 'active'"
+      class="label"
+      #Description
+      >Descripción</label
+    >
+  </div>
+  <button class="btn" [disabled]="this.formSS.invalid" (click)="saveSS()">
+    Guardar
+  </button>
+</form>

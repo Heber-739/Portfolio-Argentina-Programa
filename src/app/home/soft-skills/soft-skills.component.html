@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="ill_container">
+    <img class="illustration" src="assets/img/illustrations/ill-07.png">
+    <h2 class="title">Habilidades blandas</h2>
+</div>
+  <ng-container *ngIf="edithMode">
+    <div class="btn add_btn" (click)="addSoftSkill()">
+      {{ this.toEdith ? "Cancelar" : "Agregar Soft Skill" }}
+    </div>
+  </ng-container>
+  <ng-container *ngIf="toEdith">
+    <app-form-soft-skill
+      [edithSS]="edithSS"
+      (finish)="finish($event)"
+    ></app-form-soft-skill>
+  </ng-container>
+
+  <div class="cont" *ngFor="let item of sSs">
+    <div class="border"></div>
+    <h3 class="sub_title">{{ item.name }}</h3>
+    <p class="description">{{ item.description }}</p>
+    <div *ngIf="edithMode" class="cont_edith_btn">
+      <button class="edith_btn" (click)="delete(item)">Eliminar</button>
+      <button class="edith_btn" (click)="edith(item)">Editar</button>
+    </div>
+  </div>
+  
+</section>

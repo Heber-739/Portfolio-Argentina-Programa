@@ -1,0 +1,54 @@
+<form class="edith_form" [formGroup]="formHS">
+  <div class="input_container">
+    <input
+      class="input_text"
+      type="text"
+      (focus)="name.classList.add('active')"
+      id="name"
+      formControlName="name"
+      autocomplete="off"
+      placeholder="Nombre del skill"
+    />
+    <label
+      for="name"
+      class="label"
+      [ngClass]="edithHS.id == 0 ? '' : 'active'"
+      #name
+      >Nombre</label
+    >
+  </div>
+
+  <div class="input_container">
+    <input
+      class="input_text"
+      type="number"
+      (focus)="percentage.classList.add('active')"
+      id="percentage"
+      formControlName="percentage"
+      autocomplete="off"
+      placeholder="Porcentage en multiplo de 5"
+    />
+    <label
+      for="percentage"
+      class="label"
+      [ngClass]="edithHS.id == 0 ? '' : 'active'"
+      #percentage
+      >Porcentaje</label
+    >
+  </div>
+
+  <div class="img_container">
+    <small>Tamaño máximo de imagen 1MB</small>
+
+      <label for="file" class="btn"
+        >Logo<input
+          id="file"
+          type="file"
+          accept="image/*"
+          (change)="onchange($event)"
+      /></label>
+
+        <img *ngIf="myimage" class="outputImg" [src]="myimage"/>
+  </div>
+  <button class="btn" (click)="saveHardSkill()">Guardar</button>
+</form>

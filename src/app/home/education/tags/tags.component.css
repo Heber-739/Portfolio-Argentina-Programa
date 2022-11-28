@@ -1,0 +1,22 @@
+.allTags {
+  color: red;
+  font-size: 40px;
+}
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+}
+.add_tag {
+  margin: 3px 5px;
+  padding: 6px 7px;
+  background-color: green;
+  border-radius: 20px;
+}
+
+.op_tag{
+  margin: 8px auto;
+}
+.add{
+  margin: 20px auto 10px;
+  border-radius: 5px;
+}

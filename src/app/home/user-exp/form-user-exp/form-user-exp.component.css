@@ -1,0 +1,9 @@
+.textarea_container {
+    width: 290px;
+  }
+  textarea.input_text{
+    height: fit-content;
+    font-size: 0.8rem;
+    padding: 5px;
+    margin-bottom: 20px;
+  }

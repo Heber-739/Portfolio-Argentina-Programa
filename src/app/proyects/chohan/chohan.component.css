@@ -1,0 +1,436 @@
+.body {
+  column-gap: 1vw;
+  display: grid;
+  font-family: "Asap", sans-serif;
+  grid-auto-flow: row;
+  grid-template-columns: 24vw 24vw 24vw 24vw;
+  grid-template-rows: auto auto auto auto;
+  row-gap: 5px;
+  padding: 0 0 50px 0;
+}
+.header {
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+.text {
+  text-align: center;
+}
+
+.data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  grid-column: 1/5;
+  grid-row: 2/3;
+  margin: 10px auto;
+  width: clamp(288px, 90vw, 550px);
+}
+.data p {
+  width: 45%;
+  padding: 0;
+  margin: 5px 0;
+}
+
+.container {
+  padding: 0;
+  margin: 5px auto;
+}
+
+.wallet {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.icon {
+  height: 20px;
+}
+
+/* Section de accion central */
+
+.section1 {
+  column-gap: 1vw;
+  display: grid;
+  justify-self: center;
+  grid-column: 1/5;
+  grid-row: 3/4;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  max-width: 600px;
+}
+.presentation {
+  display: grid;
+  grid-column: 1/2;
+  margin: 0px auto;
+  text-align: center;
+  width: clamp(150px, 80%, 250px);
+  height: clamp(150px, 50vw, 300px);
+}
+.form_name {
+  justify-items: center;
+  align-self: center;
+}
+
+.input_text {
+  width: 80%;
+  margin-bottom: 7px;
+}
+.input_text::placeholder {
+  opacity: 1;
+}
+
+.btn {
+  margin: 0px auto;
+  padding: 8px 0px;
+  width: 40%;
+}
+.button {
+  padding: 8px 10px;
+  width: fit-content;
+  margin-top: 30px;
+}
+
+.message_text {
+  text-align: center;
+  width: 90%;
+  margin: 5px auto;
+  line-height: 1.5em;
+  padding: 0;
+}
+.win {
+  color: green;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+.losed {
+  color: red;
+  font-weight: bold;
+  text-shadow: 1px 1px black;
+}
+
+.continue {
+  display: flex; /* flex */
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10px auto 5px;
+  padding: 0px 0px 5px;
+  width: 95%;
+}
+
+.bets {
+  display: grid;
+  align-items: center;
+  min-height: 23vw;
+  margin: 10px auto 5px;
+  width: clamp(150px, 80%, 250px);
+  height: clamp(83px, fit-content, 140px);
+  grid-row: 2/3;
+}
+.form_bets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 10px auto 15px;
+}
+.bet {
+  text-align: center;
+  margin: 0 auto 5px;
+}
+
+/* --------------- Section 2 --------------- */
+.container_dices {
+  align-self: center;
+  display: grid;
+  grid-column: 2/3;
+  grid-row: 1/3;
+  grid-template-areas:
+    "1"
+    "2";
+  justify-content: center;
+  padding: 10px;
+  width: fit-content;
+}
+.container_dice {
+  background-color: rgb(211, 211, 211);
+  margin: 10px auto;
+  width: clamp(70px, 25vw, 160px);
+  height: clamp(70px, 25vw, 160px);
+}
+/* ---------------- Dados -------------- */
+.dice_one {
+  grid-area: 1;
+}
+.dice_two {
+  grid-area: 2;
+}
+.dice_one,
+.dice_two {
+  display: grid;
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 30%);
+  width: 100%;
+  height: 100%;
+}
+.face_one,
+.face_two {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+/* ---------------- circles -------------- */
+.circulo {
+  background: black;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.c_one,
+.c_two {
+  background: black;
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+.circle1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+.circle2 {
+  grid-row: 1;
+  grid-column: 2;
+}
+.circle3 {
+  grid-row: 1;
+  grid-column: 3;
+}
+.circle4 {
+  display: none;
+  grid-row: 2;
+  grid-column: 2;
+}
+.circle5 {
+  grid-row: 3;
+  grid-column: 1;
+}
+.circle6 {
+  grid-row: 3;
+  grid-column: 3;
+}
+.circle7 {
+  grid-row: 3;
+  grid-column: 2;
+}
+
+.registers {
+  margin: 0 auto;
+  grid-column: 1/5;
+  grid-row: 4/5;
+  min-height: 60px;
+  overflow: hidden;
+  width: 90vw;
+}
+.table {
+  margin: -4px 0 0px;
+  width: 91vw;
+  border-collapse: separate;
+  border-spacing: 0 0;
+}
+
+.table_title {
+  background: var(--color5);
+}
+
+.table_column_title {
+  border-right: 1px solid black;
+  font-size: calc(0.4rem + 2vw);
+  font-weight: bold;
+  padding: 8px 2px 5px;
+  text-align: center;
+}
+.table_body {
+  transform: scaley(-1);
+  width: 32vw;
+  box-shadow: 0 1px black;
+}
+.rows {
+  transform: scaley(-1);
+  font-size: calc(10px + 1vw);
+  font-weight: bolder;
+  text-align: center;
+  box-shadow: 0px 1px black;
+}
+.rows td {
+  background: #272727;
+  height: fit-content;
+  padding: 2px 0;
+}
+
+.rows td:nth-child(2n) {
+  background: #5c5c5c;
+}
+@media screen and (min-width: 768px) {
+  .titulo {
+    margin: 10px auto 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .box {
+    border-radius: 5px;
+  }
+  .body {
+    margin: 0 auto;
+    width: clamp(1024px, 100vw, 1920px);
+    grid-template-columns: 37% 26% 37%;
+    grid-template-rows: auto auto auto;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  h1.titulo {
+    font-size: calc(10px + 1.5vw);
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin: 0 auto;
+    padding: 8px 18px;
+    width: fit-content;
+  }
+
+  /* ---------- Billetera ------------- */
+  div.saldo {
+    grid-column: 1/2;
+    width: 90%;
+    flex-direction: row;
+  }
+  .saldo p,
+  .resultado p {
+    font-size: calc(9px + 0.8vw);
+    margin: 0.5vw 0;
+  }
+  div.resultado {
+    width: 90%;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    flex-direction: row;
+  }
+
+  /* -------------- Nombre Presentacion --------------- */
+  .section1 {
+    column-gap: 1vw;
+    grid-column: 2/4;
+    grid-row: 2/3;
+    grid-template-columns: 41% auto;
+    grid-template-rows: auto auto;
+    margin: 2vw 0 0;
+    padding: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .presentacion {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    width: 75%;
+    height: clamp(230px, 18vw, 400px);
+    text-align: center;
+    margin: 0 auto;
+    align-content: center;
+  }
+  .div_mensajes {
+    display: flex;
+    flex-direction: column;
+    height: clamp(150px, 10vw, 250px);
+    justify-content: space-evenly;
+  }
+
+  .input_text {
+    font-size: calc(5px + 2vw);
+    height: calc(20px + 2vw);
+    margin: 0 auto 1.3vw;
+  }
+  .input_text::placeholder {
+    font-size: calc(3px + 1.3vw);
+  }
+
+  .btn {
+    font-size: calc(5px + 1.5vw);
+    padding: 6px 0px;
+    width: 35%;
+  }
+  .button {
+    font-size: 20px;
+    width: 50%;
+  }
+
+  .text {
+    line-height: 1.2;
+    font-size: calc(5px + 1.5vw);
+  }
+
+  .continuar {
+    font-size: calc(5px + 1.5vw);
+  }
+
+  /* -----------------Div Apuestas----------------------- */
+
+  .bets {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 75%;
+    height: clamp(150px, 10vw, 300px);
+    text-align: center;
+    margin: 10px auto;
+    min-height: 0;
+  }
+  .form_bets p {
+    font-size: calc(5px + 1vw);
+  }
+
+  /* --------------- Section 2 --------------- */
+  .container_dados {
+    align-self: flex-start;
+    column-gap: 25px;
+    grid-template-areas: "dado1 dado2";
+  }
+  .cont_dados {
+    width: clamp(100px, 10vw, 200px);
+    height: clamp(100px, 10vw, 200px);
+    border-radius: 15px;
+  }
+
+  /* -----Tabla de resultados recientes-------*/
+
+  .ultimos_resultados {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin: 20px 0;
+    justify-self: flex-end;
+    height: fit-content;
+    width: 90%;
+  }
+  .tabla {
+    width: 100%;
+  }
+
+  .titulo_col {
+    font-size: calc(5px + 1vw);
+  }
+  .cuerpo_tabla {
+    transform: scaley(-1);
+    width: 32vw;
+    box-shadow: 0 1px black;
+  }
+  .rows {
+    font-size: calc(4px + 1vw);
+    height: 10px;
+  }
+  .rows td {
+    padding: 5px 0px;
+  }
+}

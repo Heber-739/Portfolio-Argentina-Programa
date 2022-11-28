@@ -1,0 +1,175 @@
+
+.text_container p, .ill_container p {
+  margin: 12px auto 0;
+  width: 85%;
+
+}
+
+.cards_conteiner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 80px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  max-width: 180px;
+  margin: 25px 10px;
+  background: var(--color2);
+  cursor: pointer;
+}
+
+.card_div_text {
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+}
+.card_container_img {
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid var(--color5);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card_div_text p {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+  justify-content: center;
+}
+.card_title {
+  text-align: center;
+  padding: 5px;
+
+  font-weight: bold;
+}
+.clickMe {
+  text-shadow: 0px 0px 4px black;
+  text-decoration: underline;
+}
+
+.visible {
+  display: none;
+}
+
+/* Animation class */
+
+.animation {
+  width: 100vw;
+  height: 100vh;
+  animation: transicionar 0.3s forwards, rotar 1s linear infinite;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  box-sizing: border-box;
+}
+.animation::after,
+.animation::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent var(--color5) var(--color5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.animation::before {
+  width: 32px;
+  height: 32px;
+  border-color: #fff #fff transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+@keyframes transicionar {
+  0% {
+    width: 100vw;
+    height: 100vh;
+  }
+  100% {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@media screen and (max-width: 400px) {
+  .card_container_img {
+    margin: -35px auto 10px;
+    padding: 10px;
+  }
+  .card_img {
+    width: 50px;
+  }
+
+  .clickMe {
+    height: 36px;
+    text-decoration: underline;
+  }
+}
+@media screen and (min-width: 401px) {
+  .card_container_img {
+    margin: -40px auto 10px;
+    padding: 15px;
+  }
+  .card_img {
+    width: 60px;
+  }
+  .clickMe {
+    height: 45px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ill_container{
+    margin: 10px auto 20px;
+  }
+  .illustration{
+    margin: 0 0 10px auto;
+  }
+  .ill_container p{
+    width: 50%;
+  }
+  .card_img {
+    width: 75px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 950px;
+    margin: 10px auto;
+  }
+  .card_img {
+    width: 55px;
+  }
+}

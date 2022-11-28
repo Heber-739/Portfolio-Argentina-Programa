@@ -1,0 +1,39 @@
+<section class="tinyBody">
+    <div class="btn add_btn" *ngIf="edithMode" (click)="addSkill()">
+      {{ this.toEdith ? "Cancelar" : "Agregar skills" }}
+    </div>
+
+    <app-form-skill
+    *ngIf="toEdith"
+      [edithHS]="edithHS"
+      (finish)="finish($event)"
+    ></app-form-skill>
+
+  <div class="box_skills">
+    <div class="skill" [style.width]="edithMode? '45%': 'fit-content'" *ngFor="let item of skills">
+    <circle-progress
+      [renderOnClick]="false"
+      [showBackground]="true"
+      [backgroundColor]="'white'"
+      [backgroundPadding]="-20"
+      [showTitle]="false"
+      [showSubtitle]="false"
+      [showImage]="true"
+      [imageHeight]="120"
+      [imageWidth]="120"
+      [imageSrc]="item.img"
+      [percent]="item.percentage"
+      [radius]="100"
+      [outerStrokeWidth]="8"
+      [innerStrokeWidth]="0"
+      [outerStrokeColor]="'var(--color5)'"
+      [animationDuration]="7000"
+    ></circle-progress>
+  
+    <div *ngIf="edithMode" class="cont_edith_btn">
+      <button class=" edith_btn" (click)="delete(item)">Eliminar</button>
+      <button class=" edith_btn" (click)="edith(item)">Editar</button>
+    </div>
+  </div>
+  </div>
+</section>

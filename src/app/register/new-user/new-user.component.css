@@ -1,0 +1,51 @@
+.form {
+  justify-content: space-around;
+  margin: 55px auto 10px;
+}
+.input_container {
+  width: clamp(250px,80%,350px);
+  margin: 45px 0 5px;
+}
+
+.logup {
+  width: fit-content;
+  margin: 80px auto;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.button {
+  padding: 10px 16px;
+  margin: 20px 0 0 0;
+  align-self: flex-start;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.textarea_container {
+  width: 290px;
+}
+textarea.input_text{
+  height: fit-content;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+.outputImg{
+  height: 100px;
+}
+
+
+@media screen and (min-width: 768px) {
+  .loggin {
+    padding: 100px 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+}
+
+/* ------------------------------- */
