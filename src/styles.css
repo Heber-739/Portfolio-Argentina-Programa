@@ -10,6 +10,7 @@
   --color5: #00a68b;
   --color6: #f27457;
   --visible: true;
+  --text: white;
 }
 
 * {
@@ -21,7 +22,7 @@
   min-height: 100vh;
   scroll-behavior: smooth;
 }
-.section{
+.section {
   margin: 10px 0;
   padding: 0 15px;
 }
@@ -30,9 +31,10 @@
   background: linear-gradient(45deg, var(--color4), var(--color1));
   background-repeat: no-repeat;
   font-family: "Montserrat", sans-serif;
-  color: white;
+  color: var(--text);
 }
-.title,.sub_title {
+.title,
+.sub_title {
   width: fit-content;
   font-family: "Akaya Telivigala", cursive;
   font-weight: lighter;
@@ -45,10 +47,10 @@
   justify-content: space-evenly;
   align-items: center;
 }
-.illustration{
+.illustration {
   display: none;
-    width: 200px;
-    margin: 0 auto;
+  width: 200px;
+  margin: 0 auto;
 }
 
 /* ------------------------------------------------- */
@@ -68,7 +70,7 @@
   padding: 10px 5px 5px;
 }
 p {
-  color: white;
+  color: var(--text);
   text-align: justify;
 }
 .moreInfo {
@@ -95,20 +97,21 @@ p {
 }
 
 .link {
-  color: white;
+  color: var(--text);
   text-decoration: underline;
 }
 
 .link:visited {
-  color: rgb(177, 177, 177);
+  color: var(--text);
 }
 
-.form, .edith_form {
+.form,
+.edith_form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.edith_form{
+.edith_form {
   margin: 15px auto;
 }
 .input_container {
@@ -116,7 +119,7 @@ p {
   position: relative;
   margin: 25px auto 0;
 }
-.img_container{
+.img_container {
   display: flex;
   row-gap: 25px;
   flex-direction: column;
@@ -132,8 +135,8 @@ p {
   width: 100%;
   height: 40px;
   background-color: transparent;
-  caret-color: white;
-  color: white;
+  caret-color: var(--text);
+  color: var(--text);
 }
 .input_text:focus {
   outline: 2px solid var(--color5);
@@ -144,7 +147,7 @@ p {
   text-align: center;
   box-sizing: border-box;
   font-size: 12px;
-  color: whitesmoke;
+  color: var(--text);
   opacity: 0;
 }
 .input_text.ng-touched::placeholder,
@@ -172,16 +175,17 @@ input[type="file"] {
   transform: translate(0px, -23px) scale(0.8);
   padding-inline: 10px;
 }
-.cont_edith_btn{
+.cont_edith_btn {
   margin: 10px auto;
   display: flex;
   justify-content: center;
   column-gap: 10px;
 }
-.btn, .edith_btn {
+.btn,
+.edith_btn {
   background: var(--color5);
   width: fit-content;
-  color: white;
+  color: var(--text);
   font-weight: bold;
   border: 1px solid black;
   border-radius: 50px;
@@ -189,15 +193,15 @@ input[type="file"] {
   cursor: pointer;
   text-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.753);
 }
-.add_btn{
+.add_btn {
   text-align: center;
-  width: clamp(250px,80%,350px);
+  width: clamp(250px, 80%, 350px);
   align-content: center;
   margin: 50px auto;
   background-color: var(--color4);
   border: 2px solid var(--color5);
 }
-.edith_btn{
+.edith_btn {
   width: 70px;
   height: 30px;
   font-size: 11px;
@@ -248,7 +252,7 @@ input[type="file"] {
   line-height: 1rem;
 }
 .input.ng-untouched {
-  box-shadow: 0px 1px 4px 0px white;
+  box-shadow: 0px 1px 4px 0px var(--text);
 }
 .input_text.ng-invalid.ng-dirty,
 .input_text.ng-invalid.ng-touched {
@@ -280,7 +284,9 @@ input[type="file"] {
 }
 
 @media screen and (max-width: 400px) {
-  p,.input_text::placeholder,.input_text {
+  p,
+  .input_text::placeholder,
+  .input_text {
     font-size: 12px;
   }
   .input_text {
@@ -300,7 +306,9 @@ input[type="file"] {
 }
 
 @media screen and (min-width: 401px) and (max-width: 600px) {
-  p ,.input_text::placeholder,.input_text{
+  p,
+  .input_text::placeholder,
+  .input_text {
     font-size: 14px;
   }
 
@@ -308,7 +316,7 @@ input[type="file"] {
     padding: 15px 30px;
     font-size: 14px;
   }
-  .edith_btn{
+  .edith_btn {
     width: 80px;
     height: 35px;
     font-size: 14px;
@@ -323,14 +331,16 @@ input[type="file"] {
   }
 }
 @media screen and (min-width: 601px) and (max-width: 767px) {
-  p ,.input_text::placeholder,.input_text{
+  p,
+  .input_text::placeholder,
+  .input_text {
     font-size: 16px;
   }
   .btn {
     padding: 15px 30px;
     font-size: 18px;
   }
-  .edith_btn{
+  .edith_btn {
     width: 100px;
     height: 45px;
     font-size: 16px;
@@ -344,20 +354,22 @@ input[type="file"] {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  p ,.input_text::placeholder,.input_text{
+  p,
+  .input_text::placeholder,
+  .input_text {
     font-size: 20px;
   }
   .ill_container {
     margin: 100px auto 70px;
   }
-  .illustration{
+  .illustration {
     display: flex;
   }
   .btn {
     padding: 15px 30px;
     font-size: 20px;
   }
-  .edith_btn{
+  .edith_btn {
     width: 110px;
     height: 50px;
     font-size: 18px;
@@ -369,21 +381,22 @@ input[type="file"] {
   .sub_title {
     font-size: 30px;
   }
-
 }
 
 @media screen and (min-width: 1024px) {
-  p,.input_text::placeholder,.input_text {
+  p,
+  .input_text::placeholder,
+  .input_text {
     font-size: 16px;
   }
-  .illustration{
+  .illustration {
     display: flex;
   }
   .btn {
     padding: 12px 22px;
     font-size: 16px;
   }
-  .edith_btn{
+  .edith_btn {
     width: 100px;
     height: 45px;
     font-size: 16px;

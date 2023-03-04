@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { TokenService } from '../backend/service/token.service';
 import { UserService } from '../backend/service/user.service';
 import { ModalService } from '../service/modal.service';
-import { ChangeTheme } from './ChangeTheme';
 
 @Component({
   selector: 'app-nav',
@@ -23,9 +22,7 @@ export class NavComponent implements AfterViewInit {
     this.tokenService
       .loggedObservable()
       .subscribe({ next: (res) => (this.isLogged = res) });
-    if (localStorage.getItem('theme')) {
-      ChangeTheme.sendColors(JSON.parse(localStorage.getItem('theme')!));
-    }
+    this.ChangeTheme(JSON.parse(localStorage.getItem('theme')!));
   }
 
   ngAfterViewInit(): void {
@@ -47,12 +44,18 @@ export class NavComponent implements AfterViewInit {
     }
   }
 
-  changeTheme(valor: string) {
-    if (valor == 'open') {
+  changeTheme(v: string) {
+    if (v == 'open') {
       this.selColor = !this.selColor;
     } else {
       this.touch();
-      ChangeTheme.sendColors(valor);
+      let c: string[] = this.ChangeTheme(v);
+      for (let i = 0; i < 5; i++) {
+        document.documentElement.style.setProperty(
+          `--color${i + 1}`,
+          `${c[i]}`
+        );
+      }
     }
   }
   logout(): void {
@@ -69,5 +72,15 @@ export class NavComponent implements AfterViewInit {
   touch() {
     this.menuActive = false;
     this.selColor = false;
+  }
+  ChangeTheme(v?: string): string[] {
+    if (v == 'red') {
+      return ['#a30a29', '#e21d38', '#fc5555', '#761622', '#db4900'];
+    } else if (v == 'green') {
+      return ['#40A33C', '#b38f00', '#6bb300', '#356600', '#7d6400'];
+    } else if (v == 'dark') {
+      return ['#4d4d4d', '#778899', '#595959', '#1a1a1a', '#0e0e0e'];
+    }
+    return ['#3c40a4', '#4d68f0', '#8697fe', '#003567', '#119e99'];
   }
 }

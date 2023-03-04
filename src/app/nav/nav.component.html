@@ -28,13 +28,13 @@
     </li>
     <li class="item" *ngIf="!isLogged" (click)="menu(600)">
       <a routerLink="login" class="a_item"
-        ><img class="img" src="assets/img/home.svg" />Login</a
+        ><img class="img" src="assets/img/login.svg" />Login</a
       >
     </li>
     <li class="item" *ngIf="isLogged" (click)="logout()">
       <a class="a_item"><img class="img" src="assets/img/home.svg" />Logout</a>
     </li>
-    <li class="button" (click)="changeTheme('open')">
+    <li class="item" (click)="changeTheme('open')">
       <a class="a_item"><img class="img" src="assets/img/temas.svg" />Temas</a>
     </li>
   </ul>
