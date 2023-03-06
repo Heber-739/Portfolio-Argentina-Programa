@@ -8,15 +8,9 @@
   --color3: #7295ca;
   --color4: #060940;
   --color5: #00a68b;
-  --color6: #f27457;
+  /* --color6: #f27457; */
   --visible: true;
   --text: white;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
 }
 .body {
   min-height: 100vh;
