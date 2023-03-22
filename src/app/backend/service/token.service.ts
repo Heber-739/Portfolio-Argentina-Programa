@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { DataUser } from 'src/app/interface/dataUser';
 

@@ -1,32 +1,26 @@
+<button type="button" class="hamburguer">
+  <span class="line"></span>
+  <span class="line"></span>
+  <span class="line"></span>
+</button>
 <nav class="nav">
-  <div *ngIf="menuActive" class="touch" (click)="touch()"></div>
-  <button
-    type="button"
-    class="hamburguer"
-    [class.active_menu]="menuActive"
-    (click)="menu(0)"
-  >
-    <span class="line"></span>
-    <span class="line"></span>
-    <span class="line"></span>
-  </button>
-  <ul class="list" [class.show]="menuActive">
-    <li class="item" (click)="menu(600)">
+  <ul class="list">
+    <li class="item">
       <a routerLink="" class="a_item"
         ><img class="img" src="assets/img/home.svg" />Inicio</a
       >
     </li>
-    <li class="item" (click)="menu(600)">
+    <li class="item">
       <a routerLink="proyectos" class="a_item"
         ><img class="img" src="assets/img/proyectos.svg" /> Proyectos</a
       >
     </li>
-    <li class="item" (click)="menu(600)">
+    <li class="item">
       <a routerLink="contacto" class="a_item"
         ><img class="img" src="assets/img/contacto.svg" />Contacto</a
       >
     </li>
-    <li class="item" *ngIf="!isLogged" (click)="menu(600)">
+    <li class="item" *ngIf="!isLogged">
       <a routerLink="login" class="a_item"
         ><img class="img" src="assets/img/login.svg" />Login</a
       >
@@ -38,32 +32,16 @@
       <a class="a_item"><img class="img" src="assets/img/temas.svg" />Temas</a>
     </li>
   </ul>
-  <div
-    class="blue_theme box"
-    [class.select_theme]="selColor"
-    (click)="changeTheme('blue')"
-  >
+  <div class="blue_theme box" *ngIf="selColor" (click)="changeTheme('blue')">
     Azul
   </div>
-  <div
-    class="red_theme box"
-    [class.select_theme]="selColor"
-    (click)="changeTheme('red')"
-  >
+  <div class="red_theme box" *ngIf="selColor" (click)="changeTheme('red')">
     Rojo
   </div>
-  <div
-    class="green_theme box"
-    [class.select_theme]="selColor"
-    (click)="changeTheme('green')"
-  >
+  <div class="green_theme box" *ngIf="selColor" (click)="changeTheme('green')">
     Verde
   </div>
-  <div
-    class="dark_theme box"
-    [class.select_theme]="selColor"
-    (click)="changeTheme('dark')"
-  >
+  <div class="dark_theme box" *ngIf="selColor" (click)="changeTheme('dark')">
     Negro
   </div>
 </nav>

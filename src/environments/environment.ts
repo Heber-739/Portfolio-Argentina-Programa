@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //URL: 'http://192.168.0.6:8080',
-  URL: 'https://porfolio-backend.rj.r.appspot.com'
+  URL: 'http://192.168.0.14:8080',
+  //URL: 'https://porfolio-backend.rj.r.appspot.com'
 };
 
 /*

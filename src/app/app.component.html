@@ -1,6 +1,8 @@
-<app-nav></app-nav>
-<router-outlet (activate)="onActivate()"></router-outlet>
-<app-footer></app-footer>
+<div class="cont">
+  <app-nav></app-nav>
+  <router-outlet (activate)="onActivate()"></router-outlet>
+  <app-footer></app-footer>
+</div>
 <div *ngIf="haveMessage" class="container_popup">
   <div class="popup box">
     <p class="popupMessage">

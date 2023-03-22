@@ -17,11 +17,11 @@
   }
 }
 
-.arrow { 
+.arrow {
   margin-top: auto;
   height: 20px;
 }
-.ill_container{
+.ill_container {
   height: 500px;
 }
 
@@ -30,7 +30,6 @@
   line-height: 1.3;
   margin: 30px auto 20px;
 }
-
 
 @media screen and (max-width: 400px) {
   .presentation {
@@ -68,7 +67,6 @@
   .text_presentation {
     margin: 30px auto 70px;
   }
-  
 }
 @media screen and (min-width: 768px) {
   .ill_container p {
@@ -87,7 +85,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .presentation{
+  .presentation {
     justify-content: space-evenly;
     height: calc(100vh - 485px);
     margin: 15px auto 60px;
@@ -99,7 +97,7 @@
     width: 65%;
     margin: 10px auto 70px;
   }
-  .arrow{
+  .arrow {
     display: none;
   }
 }
